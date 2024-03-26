@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Strona Główna{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+</head>
+<body>
+    <header class="bg-dark text-light py-3">
+        <div class="container">
+            <h1>Baza Danych Uczniów Dojeżdżających</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{% url 'student_list' %}">Lista Uczniów</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{% url 'add_student' %}">Dodaj Ucznia</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container mt-3">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-3 mt-5">
+        <div class="container">
+            &copy; 2024 Olaf Tojza
+        </div>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

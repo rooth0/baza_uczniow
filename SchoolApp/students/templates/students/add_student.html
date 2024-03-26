@@ -1,0 +1,32 @@
+{% extends 'students/main.html' %}
+{% load static %}
+
+{% block title %}Dodaj Ucznia{% endblock %}
+
+{% block content %}
+  <h2 class="text-center mb-4">Dodaj Ucznia</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="id_first_name">Imię:</label>
+      <input type="text" class="form-control" id="id_first_name" name="first_name">
+    </div>
+    <div class="form-group">
+      <label for="id_last_name">Nazwisko:</label>
+      <input type="text" class="form-control" id="id_last_name" name="last_name">
+    </div>
+    <div class="form-group">
+      <label for="id_address">Miasto:</label>
+      <input type="text" class="form-control" id="id_address" name="address">
+    </div>
+    <div class="form-group">
+      <label for="id_distance_to_school">Dystans do szkoły:</label>
+      <input type="number" class="form-control" id="id_distance_to_school" name="distance_to_school">
+    </div>
+    <div class="form-group">
+      <label for="id_school_class">Klasa:</label>
+      <input type="number" class="form-control" id="id_school_class" name="school_class">
+    </div>
+    <button type="submit" class="btn btn-primary">Dodaj Ucznia</button>
+  </form>
+{% endblock %}
