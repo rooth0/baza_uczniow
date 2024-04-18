@@ -47,10 +47,13 @@ def add_student(request):
         form = StudentForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('student_list') 
+            return redirect('student_list')
+        else:
+            return render(request, 'students/add_student.html', {'form': form, 'error_message': 'Wszystkie pola muszą być wypełnione!'})
     else:
         form = StudentForm()
     return render(request, 'students/add_student.html', {'form': form})
+
 
 # Ta funkcja sortuje listę studentów po imieniu.
 def sort_by_name(request):

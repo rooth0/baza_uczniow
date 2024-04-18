@@ -16,7 +16,8 @@ nav {
 }
 
 main {
-    padding: 71px;
+    padding: 30px;
+    margin-bottom: 120px;
 }
 
 button {
@@ -55,7 +56,7 @@ form button {
 }
 
 table td:hover {
-    background-color: #703f3f; 
+    background-color: #a59292; 
 }
 
 table td:hover {
@@ -79,6 +80,7 @@ table td:hover {
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 #searchButton:hover {
